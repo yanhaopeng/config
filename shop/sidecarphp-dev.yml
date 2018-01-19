@@ -1,3 +1,5 @@
 server:
   port: 5678
-
+sidecar:
+    port: 80
+    health-uri: http://210.51.161.216:${sidecar.port}/health
