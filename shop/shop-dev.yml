@@ -97,3 +97,13 @@ management:
 
 
 
+logging: 
+    level: 
+        org: 
+            springframework: WARN
+            spring: 
+                springboot:
+                    dao: DEBUG
+    file: logs/shop-logging.log
+
+
