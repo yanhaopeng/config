@@ -63,11 +63,11 @@ spring:
         content-type: text/html
         mode: HTML5
     #热部署
-    devtools:
-        restart:
-            enabled: true
-            additional-paths: shop/src/main/java
-            exclude: WEB-INF/**
+    # devtools:
+    #     restart:
+    #         enabled: true
+    #         additional-paths: shop/src/main/java
+    #         exclude: WEB-INF/**
 #mybatis配置
 mybatis:
     mapper-locations: classpath:mapping/*.xml
@@ -103,7 +103,7 @@ logging:
             springframework: WARN
             spring: 
                 springboot:
-                    dao: DEBUG
+                    domain: DEBUG
     file: logs/shop-logging.log
 
 
