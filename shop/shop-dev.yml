@@ -2,8 +2,8 @@ server:
     port: 8080
 
 spring:
-    application:
-        name: shop
+    # application:
+    #     name: shop
     profiles:
         active: prod
     datasource:
@@ -41,6 +41,8 @@ spring:
             max-pool-prepared-statement-per-connection-size: 20
             connection-properties:
             #connectionProperties: druid.stat.mergeSql: true;druid.stat.slowSqlMillis: 5000
+    jmx:
+      enabled: false
     #redis配置
     redis:
         database: 0
@@ -72,6 +74,8 @@ spring:
 mybatis:
     mapper-locations: classpath:mapping/*.xml
     type-aliases-package: com.nainai.domain
+    configuration:
+        call-setters-on-nulls: true
 #pagehelper分页插件
 pagehelper:
     helperDialect: mysql
@@ -97,13 +101,22 @@ management:
 
 
 
-logging: 
-    level: 
-        org: 
+logging:
+    level:
+        org:
             springframework: WARN
-            spring: 
+            spring:
                 springboot:
                     domain: DEBUG
     file: logs/shop-logging.log
+
+fdfs:
+    soTimeout: 1500
+    connectTimeout: 600
+    thumbImage:             #缩略图生成参数
+      width: 150
+      height: 150
+    trackerList: 106.14.175.224:22122
+
 
 
