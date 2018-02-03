@@ -1,5 +1,5 @@
 server:
-    port: 8081
+    port: 8080
 
 spring:
     application:
@@ -8,7 +8,7 @@ spring:
         active: prod
     datasource:
         name: test
-        url: jdbc:mysql://localhost:3306/shop?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+        url: jdbc:mysql://localhost:3306/pro?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
         username: root
         password: admin
         #druid数据源
@@ -41,6 +41,8 @@ spring:
             max-pool-prepared-statement-per-connection-size: 20
             connection-properties:
             #connectionProperties: druid.stat.mergeSql: true;druid.stat.slowSqlMillis: 5000
+    jmx:
+      enabled: false
     #redis配置
     redis:
         database: 0
@@ -54,24 +56,26 @@ spring:
             min-idle: 0
         timeout: 0
     #thymeleaf模板引擎
-    thymeleaf:
-        cache: false
-        prefix: classpath:/templates/
-        check-template: true
-        suffix: .html
-        encoding: utf-8
-        content-type: text/html
-        mode: HTML5
+    # thymeleaf:
+    #     cache: false
+    #     prefix: classpath:/templates/
+    #     check-template: true
+    #     suffix: .html
+    #     encoding: utf-8
+    #     content-type: text/html
+    #     mode: HTML5
     #热部署
-    devtools:
-        restart:
-            enabled: true
-            additional-paths: shop/src/main/java
-            exclude: WEB-INF/**
+    # devtools:
+    #     restart:
+    #         enabled: true
+    #         additional-paths: shop/src/main/java
+    #         exclude: WEB-INF/**
 #mybatis配置
 mybatis:
     mapper-locations: classpath:mapping/*.xml
     type-aliases-package: com.nainai.domain
+    configuration:
+        call-setters-on-nulls: true
 #pagehelper分页插件
 pagehelper:
     helperDialect: mysql
@@ -94,6 +98,23 @@ eureka:
 management:
     security:
         enabled: true
+
+logging:
+    level:
+        org:
+            springframework: WARN
+            spring:
+                springboot:
+                    domain: DEBUG
+    file: logs/shop-logging.log
+
+fdfs:
+    soTimeout: 1500
+    connectTimeout: 600
+    thumbImage:             #缩略图生成参数
+      width: 150
+      height: 150
+    trackerList: 106.14.175.224:22122
 
 
 
