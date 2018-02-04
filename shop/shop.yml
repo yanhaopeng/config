@@ -56,14 +56,14 @@ spring:
             min-idle: 0
         timeout: 0
     #thymeleaf模板引擎
-    # thymeleaf:
-    #     cache: false
-    #     prefix: classpath:/templates/
-    #     check-template: true
-    #     suffix: .html
-    #     encoding: utf-8
-    #     content-type: text/html
-    #     mode: HTML5
+    thymeleaf:
+        cache: false
+        prefix: classpath:/static/
+        check-template: true
+        suffix: .html
+        encoding: utf-8
+        content-type: text/html
+        mode: HTML5
     #热部署
     # devtools:
     #     restart:
