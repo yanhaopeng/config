@@ -1,16 +1,16 @@
 server:
-    port: 80
+    port: 8080
 
 spring:
     application:
-        name: shop-pro
+        name: shop
     profiles:
         active: prod
     datasource:
         name: nn
-        url: jdbc:mysql://172.16.3.41:3306/nn?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
-        username: yhp_nnys
-        password: yhp_nnys1.11
+        url: jdbc:mysql://172.16.2.21:3306/nn?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+        username: admin
+        password: admin1.11
         #druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -57,13 +57,13 @@ spring:
         timeout: 0
     #thymeleaf模板引擎
     thymeleaf:
-        cache: false
-        prefix: classpath:/static/
-        check-template: true
-        suffix: .html
-        encoding: utf-8
-        content-type: text/html
-        mode: HTML5
+         cache: false
+         prefix: classpath:/static/
+         check-template: true
+         suffix: .html
+         encoding: utf-8
+         content-type: text/html
+         mode: HTML5
     #热部署
     # devtools:
     #     restart:
@@ -112,9 +112,24 @@ fdfs:
     soTimeout: 1500
     connectTimeout: 600
     thumbImage:             #缩略图生成参数
-      width: 150
-      height: 150
+       width: 150
+       height: 150
     trackerList: 172.16.1.11:22122
 
+cas:
+    server-url-prefix: https://localhost:8443/cas
+    server-login-url: https://localhost:8443/cas/login
+    client-host-url: http://localhost:8081
+    validation-type: CAS
+
+    #设置可过滤的url地址
+    authentication-url-patterns: /back/*
+    validation-url-patterns[0]: /back/*
+    request-wrapper-url-patterns[0]: /back/*
+    assertion-thread-local-url-patterns[0]: /back/*
 
 
+
+    其他访问地址配置
+    cas-server-logout-url: https://localhost:8443/cas/logout
+    app-login-url: http://localhost:8081/
