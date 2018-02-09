@@ -116,20 +116,20 @@ fdfs:
        height: 150
     trackerList: 172.16.1.11:22122
 
-cas:
-    server-url-prefix: https://localhost:8443/cas
-    server-login-url: https://localhost:8443/cas/login
-    client-host-url: http://localhost:8081
-    validation-type: CAS
+# cas:
+#     server-url-prefix: https://localhost:8443/cas
+#     server-login-url: https://localhost:8443/cas/login
+#     client-host-url: http://localhost:8081
+#     validation-type: CAS
 
-    #设置可过滤的url地址
-    authentication-url-patterns: /back/*
-    validation-url-patterns[0]: /back/*
-    request-wrapper-url-patterns[0]: /back/*
-    assertion-thread-local-url-patterns[0]: /back/*
+#     #设置可过滤的url地址
+#     authentication-url-patterns: /back/*
+#     validation-url-patterns[0]: /back/*
+#     request-wrapper-url-patterns[0]: /back/*
+#     assertion-thread-local-url-patterns[0]: /back/*
 
 
 
-    其他访问地址配置
-    cas-server-logout-url: https://localhost:8443/cas/logout
-    app-login-url: http://localhost:8081/
+#     其他访问地址配置
+#     cas-server-logout-url: https://localhost:8443/cas/logout
+#     app-login-url: http://localhost:8081/
