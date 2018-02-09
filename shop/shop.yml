@@ -3,14 +3,14 @@ server:
 
 spring:
     application:
-        name: shop
+        name: shop-pro
     profiles:
         active: prod
     datasource:
-        name: test
-        url: jdbc:mysql://172.16.2.21:3306/nn?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
-        username: admin
-        password: admin1.11
+        name: nn
+        url: jdbc:mysql://172.16.3.41:3306/nn?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+        username: yhp_nnys
+        password: yhp_nnys1.11
         #druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
